@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  mariadb:
+    image: mariadb
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./etc/mysql/conf.d:/etc/mysql/conf.d
+      - data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=sa
+      - TERM=xterm
+
+volumes:
+  data: {}
